@@ -26,10 +26,35 @@
         <button id="d-btn">D</button>
     </section>
 
-    <section class="" id="start-area">
+    <section class="card-body" id="start-area">
         <h2>Coding Quiz</h2>
         <p></p>
         <button id="start-btn">Start Quiz</button>
+    </section>
+
+    <section class="card-body visually-hidden" id="win-screen">
+        <h2>You Win!</h2>
+        <p id="score-display"></p>
+        <form id="initials">
+            <div class="mb-3">
+                <label for="AAA" class="form-label">Initials</label>
+                <input type="text" class="form-control" id="initials">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Score</button>
+        </form>
+    </section>
+
+    <section class="card-body visually-hidden" id="lose-screen">
+        <h2>Too slow!</h2>
+        <p>You ran out of time. Reload the page and try again!</p>
+    </section>
+
+    <section class="card-body visually-hidden" id="high-scores">
+        <h2>Your Saved High Scores</h2>
+        <ul id="top-five">
+
+        </ul>
+        
     </section>
 
     <!-- Linking jquery and script.js sheet -->

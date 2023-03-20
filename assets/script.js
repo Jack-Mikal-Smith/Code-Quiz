@@ -4,8 +4,11 @@ var gameArea = $('#game-area');
 var startBtn = $('#start-btn');
 var timerEl = $('#timer');
 var startArea = $('#start-area');
+var winScreen = $('#win-screen');
+var loseScreen = $('#lose-screen');
+var highScores = $('#high-scores');
 
-// Declare variables starting variables for the timer and question index
+// Declaring starting variables for the timer and question index
 var questionIndex = 0;
 var timeLeft = 60;
 
@@ -27,7 +30,6 @@ var question = [
         correct: "a"
     },
 ];
-
 
 // Adding event listner to start button
 startBtn.on('click', function() {
@@ -69,18 +71,23 @@ gameArea.on('click', "button", function() {
     if (questionIndex === question.length) {
         gameArea.addClass("visually-hidden");
         clearInterval(timer);
+        win();
         return;
     }
     displayQuestion();
 })
 
-
-// Create empty variables for scoring
-
-
-
-
 // Create win screen displaying score w/ option to input intials; Save score to local storage
+var win = function() {
+    gameArea.addClass('visually-hidden');
+    winScreen.removeClass('visually-hidden');
+}
+
+// Adding event listner to submit score button
+winScreen.on('click', 'button', function() {
+    // pull user input for #initials & time remaining; save to local storage
+    // return to starting screen
+})
 
 // Create lose screen with option to play agian
 
