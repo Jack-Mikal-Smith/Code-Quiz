@@ -11,8 +11,26 @@
 </head>
 <body>
     <!-- Simple Header and 'nav bar'. Includes link to high scores, webpage title, and the game timer -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-white navbar-bg-dark">
+        <div id="scores-lnk" class="navbar-brand" href="#">High Scores</div>
+        <h1>Code Quiz</h1>
+        <span id="timer"></span>
 
+    </nav>
     <!-- On start-up, body will display the quiz title, a breif descripition, and a button to start the quiz -->
+    <section class="card-body visually-hidden" id="game-area">
+        <p id="prompt"></p>
+        <button id="a-btn">A</button>
+        <button id="b-btn">B</button>
+        <button id="c-btn">C</button>
+        <button id="d-btn">D</button>
+    </section>
+
+    <section class="" id="start-area">
+        <h2>Coding Quiz</h2>
+        <p></p>
+        <button id="start-btn">Start Quiz</button>
+    </section>
 
     <!-- Linking jquery and script.js sheet -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
