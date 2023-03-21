@@ -6,11 +6,13 @@ var timerEl = $('#timer');
 var startArea = $('#start-area');
 var winScreen = $('#win-screen');
 var loseScreen = $('#lose-screen');
-var highScores = $('#high-scores');
+var highScores = $('#high-score-card');
+var initialsInput = $('#initials-input', 'text');
+var saveScoreBtn = $('#save-score');
 
 // Declaring starting variables for the timer and question index
 var questionIndex = 0;
-var timeLeft = 60;
+var timeLeft = 10;
 
 // Declaring an array of the potential questions as a variable
 var question = [
@@ -47,6 +49,11 @@ var timerFun = function() {
             timerEl.text(timeLeft);
         }
     },1000)
+    if (timeLeft === 0) {
+        gameArea.addClass('visually-hidden');
+        loseScreen.removeClass('visually-hidden');
+        return;
+    }
 }
 
 // Declaring dispaly question as a variable; inputs question array values into cooresponding game-area elements
@@ -80,15 +87,30 @@ gameArea.on('click', "button", function() {
 // Create win screen displaying score w/ option to input intials; Save score to local storage
 var win = function() {
     gameArea.addClass('visually-hidden');
-    winScreen.removeClass('visually-hidden');
+    winScreen.removeClass('visually-hidden');    
 }
 
 // Adding event listner to submit score button
-winScreen.on('click', 'button', function() {
+saveScoreBtn.on('click', function() {
     // pull user input for #initials & time remaining; save to local storage
     // return to starting screen
+    var initials = initialsInput;
+    var score = (timeLeft);
+    localStorage.push({
+        Initials: initials,
+        Score: score
+    })
+    winScreen.addClass('visually-hidden');
+    startArea.removeClass('visually-hidden');
 })
 
-// Create lose screen with option to play agian
 
+// Adding event listner to high scores link on the nav bar
+scoreList.on('click', function() {
+    highScores.removeClass('visually-hidden');
+    var savedInt = localStorage.getItem('Intials');
+    var savedScore = localStorage.getItem('Score');
+
+    
+})
     

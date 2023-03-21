@@ -11,8 +11,8 @@
 </head>
 <body>
     <!-- Simple Header and 'nav bar'. Includes link to high scores, webpage title, and the game timer -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-white navbar-bg-dark">
-        <div id="scores-lnk" class="navbar-brand" href="#">High Scores</div>
+    <nav id="header" class="navbar navbar-expand-lg navbar-white navbar-bg-dark align-items-center">
+        <a id="scores-lnk" class="nav-link" href="#high-scores">High Scores</a>
         <h1>Code Quiz</h1>
         <span id="timer"></span>
 
@@ -38,9 +38,9 @@
         <form id="initials">
             <div class="mb-3">
                 <label for="AAA" class="form-label">Initials</label>
-                <input type="text" class="form-control" id="initials">
+                <input type="text" class="form-control" id="initials-input">
             </div>
-            <button type="submit" class="btn btn-primary">Save Score</button>
+            <button type="submit" class="btn btn-primary" id="save-score">Save Score</button>
         </form>
     </section>
 
@@ -49,12 +49,13 @@
         <p>You ran out of time. Reload the page and try again!</p>
     </section>
 
-    <section class="card-body visually-hidden" id="high-scores">
-        <h2>Your Saved High Scores</h2>
-        <ul id="top-five">
-
+    <section class="card-body visually-hidden" id="high-score-card">
+        <h2>Your Saved High Score</h2>
+        <ul>
+            <li id="saved-int"></li>
+            <li id="saved-score"></li>
         </ul>
-        
+
     </section>
 
     <!-- Linking jquery and script.js sheet -->
