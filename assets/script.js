@@ -9,6 +9,7 @@ var loseScreen = $('#lose-screen');
 var highScores = $('#high-score-card');
 var initialsInput = $('#initials-input', 'text');
 var saveScoreBtn = $('#save-score');
+var highScoreSpan =$('score-return');
 
 // Declaring starting variables for the timer and question index
 var questionIndex = 0;
@@ -108,9 +109,7 @@ saveScoreBtn.on('click', function() {
 // Adding event listner to high scores link on the nav bar
 scoreList.on('click', function() {
     highScores.removeClass('visually-hidden');
-    var savedInt = localStorage.getItem('Intials');
-    var savedScore = localStorage.getItem('Score');
-
-    
+    var savedScore = localStorage.getItem('Initials', 'Score');
+    highScoreSpan.text(savedScore);
 })
     
